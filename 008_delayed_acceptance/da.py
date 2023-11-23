@@ -39,6 +39,8 @@ class DA(ProposalBasedSampler):
         """ Delayed Acceptance (DA) sampler. Default (if proposal is None) with proposal that is Gaussian with identity covariance"""
         super().__init__(target, proposal=proposal, scale=scale,  x0=x0, dim=dim, **kwargs)
         self.reduced_target = reduced_target
+        self.second_stage_counter = 0
+        self.second_stage_accepted_counter = 0
 
 
     @ProposalBasedSampler.proposal.setter 
@@ -168,6 +170,7 @@ class DA(ProposalBasedSampler):
         u_theta = np.log(np.random.rand())
         if (u_theta <= alpha):
             # accept/reject with full target
+            self.second_stage_counter += 1
             target_eval_star = self.target.logd(x_star)
             ratio = target_eval_star - target_eval_t - reduced_ratio
 
@@ -175,6 +178,7 @@ class DA(ProposalBasedSampler):
             v_theta = np.log(np.random.rand())
             if (v_theta <= beta):
                 # print('accepted with full model')
+                self.second_stage_accepted_counter += 1
                 x_next = x_star
                 reduced_target_eval_next = reduced_target_eval_star
                 target_eval_next = target_eval_star
