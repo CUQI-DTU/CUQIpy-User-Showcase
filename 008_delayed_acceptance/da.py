@@ -33,8 +33,6 @@ class DA(ProposalBasedSampler):
         The signature of the callback function is `callback(sample, sample_index)`,
         where `sample` is the current sample and `sample_index` is the index of the sample.
     """
-    #target,  proposal=None, scale=1, x0=None, dim=None
-    #    super().__init__(target, proposal=proposal, scale=scale,  x0=x0, dim=dim)
     def __init__(self, target, reduced_target, proposal=None, scale=None, x0=None, dim=None, **kwargs):
         """ Delayed Acceptance (DA) sampler. Default (if proposal is None) with proposal that is Gaussian with identity covariance"""
         super().__init__(target, proposal=proposal, scale=scale,  x0=x0, dim=dim, **kwargs)
@@ -166,10 +164,10 @@ class DA(ProposalBasedSampler):
 
         acc = 0
 
-        # accept/reject with reduced target
+        # first stage: accept/reject with reduced target
         u_theta = np.log(np.random.rand())
         if (u_theta <= alpha):
-            # accept/reject with full target
+            # second stage: accept/reject with reduced target
             self.second_stage_counter += 1
             target_eval_star = self.target.logd(x_star)
             ratio = target_eval_star - target_eval_t - reduced_ratio
