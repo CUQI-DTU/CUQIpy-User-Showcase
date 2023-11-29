@@ -17,11 +17,7 @@ class besov_prior:
         self.delt = delt
         # Level determines the amount of levels to not use in the Discrete wavelet transform
         self.level = level
-
-
-    
-    
-
+ 
     def inverse_weights2(self):
         # inverse_weights2 computes in the inverse weights of the Besov prior using the natural wavelet weights.
         # These weights is the one we will base the remaining methods on.
@@ -36,7 +32,6 @@ class besov_prior:
             inv_weights[2**i:2**(i+1)]=2**(-i*(self.s+0.5-1/self.p))
         #return np.sqrt(n)*inv_weights 
         return inv_weights
-    
     
     def inv_wavelet_weigth(self, signal):
         # Computing B^-1 which is the inverse wavelet transform of the inverse Besov scaled signal.
@@ -55,7 +50,6 @@ class besov_prior:
          List.append(coeff[2 ** j:2 ** (j + 1)])
         # Doing the inverse wavelet transform on the wavelet coefficients
         return pywt.waverec(List, self.wavelet, mode='periodization')
-    
     
     def prior_to_normal(self, x):
         # prior_to_normal computes the map g and its derivative that transforms a p-norm prior to a standard Gaussian.
@@ -89,7 +83,6 @@ class besov_prior:
         # Returning the computed results
         return g, g_diff
 
-
     def transform(self,x):
         # Transform computes the full prior transformation B^1g(*)
         # Computing g
@@ -97,7 +90,6 @@ class besov_prior:
         # Computing B^-1*g
         return self.inv_wavelet_weigth(g)
        # return self.inv_wavelet_weigth(x)
-
 
     def jac_const(self,N):
         # Computing the Besov matrix B^-1 which is used as the prior jacobian.
@@ -116,7 +108,6 @@ class besov_prior:
             weights[i] = (i+1)**(self.s+0.5-1/self.p)
         return 1/np.sqrt(n)*weights
     
-
     def inverse_weigths(self):
         # Inverse weigths computes the inverse of the first version of the Besov weights
         # Dimension
@@ -142,13 +133,11 @@ class besov_prior:
             weights[2**i:2**(i+1)]=2**(i*(self.s+0.5-1/self.p))
         return 1/np.sqrt(n)*weights 
 
-
     def wavelet_weigth(self, signal):
          wavelet_coefficients = pywt.wavedec(signal, self.wavelet, mode='periodization', level=self.J)
          weights = self.weights2()
          weights[0:2**(self.level)] = 1/np.sqrt(2**self.J)
          return weights*pywt.coeffs_to_array(wavelet_coefficients)[0]
-        
 
     def compute_besov_matrix(self):
         n = 2**self.J
@@ -161,13 +150,8 @@ class besov_prior:
     def norm(self, signal):
         return np.linalg.norm(self.wavelet_weigth(signal) , ord=self.p)**self.p
 
-
     def norm_inv_trans(self, signal):
         return np.linalg.norm(self.inv_wavelet_weigth(signal), ord=self.p)**self.p     
-
-
-
-
 
 if __name__=="__main__":
 
