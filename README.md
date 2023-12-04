@@ -12,11 +12,11 @@ Welcome to the [CUQIpy](https://github.com/CUQI-DTU/CUQIpy) User Showcase Reposi
 
 - [004 Besov 1D deconvolution](https://github.com/CUQI-DTU/CUQIpy-User-Showcase/blob/main/004_Besov_1D_deconvolution/Besov_1D_deconvolution.ipynb) _custom prior_, _deconvolution_, _gradient-based_
 
-- 005 Plug & play prior (TBA) _custom prior_, _neural network_
+- 005 TBA
 
-- 006 Super resolution (TBA) _custom forward_
+- 006 TBA
 
-- 007 implicitly regularized Gaussian (TBA) _custom prior_
+- 007 TBA
 
 - [008 Delayed acceptance](https://github.com/CUQI-DTU/CUQIpy-User-Showcase/blob/main/008_delayed_acceptance/da_with_ode.ipynb) _custom forward_, _custom sampler_, _ODE_
 
