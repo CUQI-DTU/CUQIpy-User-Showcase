@@ -33,6 +33,6 @@ To contribute a new notebook to the repository, please follow these step-by-step
     - Include a descriptive summary of your contribution at the top of your notebook.
     - Display the CUQIpy version by printing it.
     - Incorporate a license header, selecting a license of your preference.
-3. Subsequently, open a pull request for the CUQIpy developer team to review. When initiating the pull request, please ensure to check the box that says "Allow edits from maintainers."
+3. Subsequently, open a pull request for the CUQIpy maintainer team to review. When initiating the pull request, please ensure to check the box that says "Allow edits from maintainers."
 
-The CUQIpy developer team will thoroughly review your contribution and may provide feedback for minor adjustments or make some small changes to your fork. We appreciate your commitment to enhancing the CUQIpy community!
+The CUQIpy maintainer team will thoroughly review your contribution and may provide feedback for minor adjustments or make some small changes to your fork. We appreciate your commitment to enhancing the CUQIpy community!
