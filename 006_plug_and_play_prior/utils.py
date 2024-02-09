@@ -74,12 +74,10 @@ def pytorch_denoiser(xtilde, model, device = 'cpu'):
             xtilde_torch = torch.from_numpy(xtilde_torch).type(torch.cuda.FloatTensor).to(device)
 
         # denoise
-        #This line allows to compute a Gpu Float-tensor into a cpu float tensor and
+        # This line allows to compute a Gpu Float-tensor into a cpu float tensor and
         # then into a numpy array
         x = model(xtilde_torch).cpu().numpy()
         #r = np.reshape(r, -1)
-
-
 
     # Reshape back
     x = np.reshape(x,(m,n))
