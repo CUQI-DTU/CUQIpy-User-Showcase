@@ -34,7 +34,7 @@ class LaplaceSmoothed():
     def gradient(self, val):
         if isinstance(val, (float,int)):
             val = np.array([val])
-        return np.sum(np.array((val - self.location)/self.scale/np.sqrt((val-self.location)**2+self.beta)))
+        return -np.array((val - self.location)/self.scale/np.sqrt((val-self.location)**2+self.beta))
 
 # %% [markdown]
 # ### Parameters
@@ -134,8 +134,12 @@ plt.show()
 d = ( par['s_data']*par['R'] )**2 # dimension of problem
 # X = Laplace(np.zeros(d), np.ones(d) * 1/par['delta']) # product-form Laplace prior (requires scale (inverse of rate))
 # X = Laplace(np.zeros(d), 1/par['delta']) # product-form Laplace prior (requires scale (inverse of rate))
-mylaplace= LaplaceSmoothed(d, np.zeros(d),1/par['delta'],1e-2)
+beta = 1e-2
+# mylaplace= LaplaceSmoothed(d, np.zeros(d), 1/par['delta'], beta)
+mylaplace= LaplaceSmoothed(d, np.zeros(d), 1, beta)
 X=cuqi.distribution.UserDefinedDistribution(dim=d, logpdf_func=mylaplace.logpdf, gradient_func=mylaplace.gradient)
+
+# X = cuqi.distribution.Gaussian(np.zeros(d), np.eye(d)) # product-form Gaussian prior
 
 # data model
 # Y = Gaussian(mean=lambda X: A_mat@X, cov= par['noise_std']**2 * np.ones(y.shape))
@@ -160,10 +164,11 @@ print(f"Posterior geometry: {p.geometry}")
 # print(BP)
 
 # %%
-sampler = cuqi.sampler.NUTS(p)
+# sampler = cuqi.sampler.NUTS(p)
+# sampler.sample(100,10)
 
-# %%
-sampler.sample_adapt(100,10)
+mala_sampler = cuqi.sampler.MALA(p, scale=0.01)
+mala_samples = mala_sampler.sample(1000, 100)
 
 # %% [markdown]
 # ### Sampling and sample statistics
@@ -182,3 +187,8 @@ sampler.sample_adapt(100,10)
 # 
 
 
+# BP = BayesianProblem(Y, X).set_data(Y=y)
+
+# # x_map = BP.MAP()
+
+# x_samples = BP.sample_posterior(100)
