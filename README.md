@@ -14,7 +14,7 @@ Welcome to the [CUQIpy](https://github.com/CUQI-DTU/CUQIpy) User Showcase Reposi
 
 - [005 Implicit priors](https://github.com/CUQI-DTU/CUQIpy-User-Showcase/blob/main/005_Implicit_Regularized_Gaussian/implicit_priors.ipynb) _implicit prior_, _regularized Gaussian_, _deconvolution_, _linearRTO_
 
-- 006 TBA
+- [006 Plug-and-play priors](https://github.com/CUQI-DTU/CUQIpy-User-Showcase/blob/main/006_plug_and_play_prior/pnp_prior.ipynb) _implicit prior_, _neural network_, _denoiser_, _deconvolution_, _linearRTO_
 
 - 007 TBA
 
