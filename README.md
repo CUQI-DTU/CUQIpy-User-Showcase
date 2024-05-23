@@ -24,6 +24,8 @@ Welcome to the [CUQIpy](https://github.com/CUQI-DTU/CUQIpy) User Showcase Reposi
 
 - [010 Spring system](https://github.com/CUQI-DTU/CUQIpy-User-Showcase/blob/main/010_spring_system/spring.ipynb) _custom forward_, _MH sampler_
 
+- [011 Fusion plasma tomography](https://github.com/CUQI-DTU/CUQIpy-User-Showcase/blob/main/011_fusion_plasma_tomography/Fast-ion_distribution_reconstruction_notebook.ipynb) _custom forward_, _custom prior_, _linearRTO_
+
 ## Contribution Guidelines
 
 If you're interested in contributing to this repository by adding your notebook, we encourage you to submit a pull request. Your contributions are immensely valuable to us!
