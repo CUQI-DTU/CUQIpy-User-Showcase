@@ -16,7 +16,7 @@ Welcome to the [CUQIpy](https://github.com/CUQI-DTU/CUQIpy) User Showcase Reposi
 
 - [006 Plug-and-play priors](https://github.com/CUQI-DTU/CUQIpy-User-Showcase/blob/main/006_plug_and_play_prior/pnp_prior.ipynb) _implicit prior_, _neural network_, _denoiser_, _deconvolution_, _linearRTO_
 
-- 007 TBA
+- [007 Smoothed Laplace](https://github.com/CUQI-DTU/CUQIpy-User-Showcase/blob/smoothed_laplace/007_smoothed_Laplace/smoothed_laplace.ipynb) _custom prior_, _gradient-based_, _deconvolution_
 
 - [008 Delayed acceptance](https://github.com/CUQI-DTU/CUQIpy-User-Showcase/blob/main/008_delayed_acceptance/da_with_ode.ipynb) _custom forward_, _custom sampler_, _ODE_
 
