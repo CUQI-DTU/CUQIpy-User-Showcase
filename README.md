@@ -26,6 +26,8 @@ Welcome to the [CUQIpy](https://github.com/CUQI-DTU/CUQIpy) User Showcase Reposi
 
 - [011 Fusion plasma tomography](https://github.com/CUQI-DTU/CUQIpy-User-Showcase/blob/main/011_fusion_plasma_tomography/Fast-ion_distribution_reconstruction_notebook.ipynb) _custom forward_, _custom prior_, _linearRTO_
 
+- [012 super resolution](https://github.com/CUQI-DTU/CUQIpy-User-Showcase/blob/main/012_super_resolution/STORM.ipynb) _custom forward_, _custom prior_, _gradient_based_, _CUQIpy-PyTorch_
+
 ## Contribution Guidelines
 
 If you're interested in contributing to this repository by adding your notebook, we encourage you to submit a pull request. Your contributions are immensely valuable to us!
