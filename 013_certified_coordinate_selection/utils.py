@@ -39,3 +39,8 @@ def save(file, variable):
     file = open(file, 'wb')
     pickle.dump(variable, file)
     file.close()
+
+# fast exponential and Laplace sampler, samples product-form densities with different rate parameters
+# see, e.g., https://www.johndcook.com/blog/2018/03/13/generating-laplace-random-variables/
+fast_exponential = lambda rate, N: - np.log( np.random.random( size=(rate.size, N) ) ) / rate[:, None]
+fast_Laplace = lambda rate, N: fast_exponential(rate, N) - fast_exponential(rate, N)
