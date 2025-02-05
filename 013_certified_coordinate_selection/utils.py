@@ -6,27 +6,6 @@ import pickle
 from scipy.sparse.linalg import lsqr, lsmr, LinearOperator
 
 # smoothed Laplace prior 
-class LaplaceSmoothed(cuqi.distribution.Distribution):
-    def __init__(self, location, scale, beta, **kwargs):
-        super().__init__(**kwargs)
-        self.location = location
-        self.scale = scale
-        self.beta = beta
-  
-    def logpdf(self, x):
-        if isinstance(x, (float, int, np.ndarray)):
-            x = torch.tensor([x], dtype=torch.double)
-        return torch.sum(torch.log(0.5/self.scale) - torch.sqrt((x-self.location)**2+self.beta)/self.scale)
-    
-    def gradient(self, x):
-        x.requires_grad = True
-        x.grad = None
-        Q = self.logpdf(x)     # Forward pass
-        Q.backward()           # Backward pass
-        return x.grad
-
-    def _sample(self,N=1,rng=None):
-        return None
 
 # load files
 def load(file):
