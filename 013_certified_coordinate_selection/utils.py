@@ -1,9 +1,7 @@
-import torch
-import cuqi
 import numpy as np
 from pathlib import Path
 import pickle
-from scipy.sparse.linalg import lsqr, lsmr, LinearOperator
+from scipy.sparse.linalg import lsqr, LinearOperator
 
 # smoothed Laplace prior 
 
