@@ -28,6 +28,8 @@ Welcome to the [CUQIpy](https://github.com/CUQI-DTU/CUQIpy) User Showcase Reposi
 
 - [012 Super resolution](https://github.com/CUQI-DTU/CUQIpy-User-Showcase/blob/main/012_super_resolution/STORM.ipynb) _custom forward_, _custom prior_, _gradient_based_, _CUQIpy-PyTorch_
 
+- [013 Certified coordinate selection](https://github.com/CUQI-DTU/CUQIpy-User-Showcase/blob/main/013_certified_coordinate_selection/ccs_wavelets.ipynb) _high dimensional Laplace_, _dimension reduction_, _gradient_based_, _Wavelets_, _Besov_
+
 ## Contribution Guidelines
 
 If you're interested in contributing to this repository by adding your notebook, we encourage you to submit a pull request. Your contributions are immensely valuable to us!
