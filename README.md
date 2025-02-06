@@ -28,7 +28,7 @@ Welcome to the [CUQIpy](https://github.com/CUQI-DTU/CUQIpy) User Showcase Reposi
 
 - [012 Super resolution](https://github.com/CUQI-DTU/CUQIpy-User-Showcase/blob/main/012_super_resolution/STORM.ipynb) _custom forward_, _custom prior_, _gradient_based_, _CUQIpy-PyTorch_
 
-- [013 Certified coordinate selection](https://github.com/CUQI-DTU/CUQIpy-User-Showcase/blob/main/013_certified_coordinate_selection/ccs_wavelets.ipynb) _high dimensional Laplace_, _dimension reduction_, _gradient_based_, _Wavelets_
+- [013 Certified coordinate selection](https://github.com/CUQI-DTU/CUQIpy-User-Showcase/blob/main/013_certified_coordinate_selection/ccs_wavelets.ipynb) _high dimensional Laplace_, _dimension reduction_, _gradient-based_, _Wavelets_
 
 ## Contribution Guidelines
 
