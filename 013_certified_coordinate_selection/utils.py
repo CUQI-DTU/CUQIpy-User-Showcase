@@ -3,8 +3,6 @@ from pathlib import Path
 import pickle
 from scipy.sparse.linalg import lsqr, LinearOperator
 
-# smoothed Laplace prior 
-
 # load files
 def load(file):
     file = Path(file)
